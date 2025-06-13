@@ -8,4 +8,4 @@ Link to dataset: https://raw.githubusercontent.com/datasciencedojo/datasets/mast
 
 To install all the requirements: pip install -r requirements.txt
 
-Link to deployed website: https://tanv-04-titanic-survivor-predictor-app-r6mqts.streamlit.app/
+Link to deployed website: https://tanv-04-titanic-survivor-predictor-app-kstbym.streamlit.app/
