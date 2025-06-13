@@ -7,3 +7,5 @@ This application also demonstrates the use of Explanable AI - with the help of S
 Link to dataset: https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv
 
 To install all the requirements: pip install -r requirements.txt
+
+Link to deployed website: https://tanv-04-titanic-survivor-predictor-app-r6mqts.streamlit.app/
