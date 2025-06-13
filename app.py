@@ -83,14 +83,25 @@ with col2:
 
     # SHAP explanation
     st.subheader("SHAP Explanation")
+
     explainer = shap.TreeExplainer(model)
     shap_values = explainer.shap_values(input_data)
 
-    fig, axis = plt.subplots(figsize=(8, 4))
-    shap.summary_plot(
-        shap_values, input_data, plot_type="bar", show=False
-    )  # shap summary plot on this figure
-    st.pyplot(fig)  # pass the fig object explicitly to Streamlit
+    # Waterfall plot
+    shap_input_values = shap_values[0]
+    base_value = explainer.expected_value
+
+    shap_exp = shap.Explanation(
+        values=shap_input_values,
+        base_values=base_value,
+        data=input_data.iloc[0],
+        feature_names=input_data.columns.tolist(),
+    )
+
+    # Display
+    fig, ax = plt.subplots(figsize=(8, 4))
+    shap.plots.waterfall(shap_exp, show=False)
+    st.pyplot(fig)
 
     # LIME explanation
     st.subheader("LIME Explanation")
